@@ -42,7 +42,7 @@ jobs:
           docker build -t docker.pkg.github.com/ties1080/actions/deploy .
       - name: Docker login
         run: |
-          docker login docker.pkg.github.com -u ties1080 -p ${{ secrets.GITHUB_TOKEN }}
+          docker login docker.pkg.github.com -u ${{ secrets.USER_LOGIN }} -p ${{ secrets.GITHUB_TOKEN }}
       - name: Docker push
         run: |
           docker push docker.pkg.github.com/ties1080/actions/deploy
